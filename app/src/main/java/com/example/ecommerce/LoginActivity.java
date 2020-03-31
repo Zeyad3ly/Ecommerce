@@ -79,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
     private void LoginUser() {
         String phone = InputPhoneNumber.getText().toString();
         String password = InputPassword.getText().toString();
-        if (TextUtils.isEmpty(phone) || phone.length() != 11) {
+        if (TextUtils.isEmpty(phone)) {
             InputPhoneNumber.setError("Enter a valid phone number");
         } else if (TextUtils.isEmpty(password) || password.length() < 6) {
             InputPassword.setError("Enter a valid password");
@@ -97,35 +97,51 @@ public class LoginActivity extends AppCompatActivity {
             Paper.book().write(Prevalent.UsersPhoneKey, phone);
             Paper.book().write(Prevalent.UsersPasswordKey, password);
         }
+
         final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance().getReference();
 
+
         RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.child(parentDbName).child(phone).exists()) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot)
+            {
+                if (dataSnapshot.child(parentDbName).child(phone).exists())
+                {
+                    Users usersData = dataSnapshot.child(parentDbName).child(phone).getValue(Users.class);
 
-                    Users usersData = dataSnapshot.child(parentDbName).child(phone)
-                            .getValue(Users.class);
-                    if (usersData.getPhone().equals(phone)) {
-                        if (usersData.getPassword().equals(password)) {
-                            if (parentDbName.equals("Admins")) {
-                                Toast.makeText(LoginActivity.this,
-                                        "Admin Login successful", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(
-                                        LoginActivity.this, HomeActivity.class);
+                    if (usersData.getPhone().equals(phone))
+                    {
+                        if (usersData.getPassword().equals(password))
+                        {
+                            if (parentDbName.equals("Admins"))
+                            {
+                                Toast.makeText(LoginActivity.this, "Welcome Admin, you are logged in Successfully...", Toast.LENGTH_SHORT).show();
+                                loadingBar.dismiss();
+
+                                Intent intent = new Intent(LoginActivity.this, AdminAddNewProductActivity.class);
                                 startActivity(intent);
-                            } else if (parentDbName.equals("Users")){
-                                Toast.makeText(LoginActivity.this,
-                                        "User Login successful", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(
-                                        LoginActivity.this, HomeActivity.class);
+                            }
+                            else if (parentDbName.equals("Users"))
+                            {
+                                Toast.makeText(LoginActivity.this, "logged in Successfully...", Toast.LENGTH_SHORT).show();
+                                loadingBar.dismiss();
+
+                                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                Prevalent.currentOnlineUsers = usersData;
                                 startActivity(intent);
                             }
                         }
+                        else
+                        {
+                            loadingBar.dismiss();
+                            Toast.makeText(LoginActivity.this, "Password is incorrect.", Toast.LENGTH_SHORT).show();
+                        }
                     }
-                } else {
-                    Toast.makeText(LoginActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(LoginActivity.this, "Account with this " + phone + " number do not exists.", Toast.LENGTH_SHORT).show();
                     loadingBar.dismiss();
                 }
             }

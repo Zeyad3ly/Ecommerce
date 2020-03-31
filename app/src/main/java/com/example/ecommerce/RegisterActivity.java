@@ -50,7 +50,7 @@ public class RegisterActivity extends AppCompatActivity {
         String name = InputName.getText().toString();
         String phone = InputPhoneNumber.getText().toString();
         String password = InputPassword.getText().toString();
-        if (TextUtils.isEmpty(phone) || phone.length() < 11) {
+        if (TextUtils.isEmpty(phone) ) {
             Toast.makeText(this, "Enter a valid Phone Number", Toast.LENGTH_SHORT).show();
         } else if (TextUtils.isEmpty(name)) {
 
