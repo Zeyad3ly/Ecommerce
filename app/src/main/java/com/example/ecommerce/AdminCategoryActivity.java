@@ -9,27 +9,33 @@ import android.widget.ImageView;
 
 public class AdminCategoryActivity extends AppCompatActivity {
     private ImageView tShirts, sportsTShirts, femaleDresses, sweathers;
-    private ImageView glasses, hatCaps, walletsBagPurses, shoes;
-    private ImageView headPhones, laptops, watches, mobilePhones;
+    private ImageView glasses, hatsCaps, walletsBagsPurses, shoes;
+    private ImageView headPhonesHandFree, Laptops, watches, mobilePhones;
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_category);
+
+
         tShirts = (ImageView) findViewById(R.id.t_shirts);
         sportsTShirts = (ImageView) findViewById(R.id.sports_t_shirts);
         femaleDresses = (ImageView) findViewById(R.id.female_dresses);
         sweathers = (ImageView) findViewById(R.id.sweathers);
 
         glasses = (ImageView) findViewById(R.id.glasses);
-        hatCaps = (ImageView) findViewById(R.id.hats_caps);
-        walletsBagPurses = (ImageView) findViewById(R.id.purses_bags_wallets);
+        hatsCaps = (ImageView) findViewById(R.id.hats_caps);
+        walletsBagsPurses = (ImageView) findViewById(R.id.purses_bags_wallets);
         shoes = (ImageView) findViewById(R.id.shoes);
 
-        headPhones = (ImageView) findViewById(R.id.headphones_handfree);
-        laptops = (ImageView) findViewById(R.id.laptop_pc);
+        headPhonesHandFree = (ImageView) findViewById(R.id.headphones_handfree);
+        Laptops = (ImageView) findViewById(R.id.laptop_pc);
         watches = (ImageView) findViewById(R.id.watches);
         mobilePhones = (ImageView) findViewById(R.id.mobilephones);
+
+
         tShirts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
@@ -85,7 +91,7 @@ public class AdminCategoryActivity extends AppCompatActivity {
         });
 
 
-        hatCaps.setOnClickListener(new View.OnClickListener() {
+        hatsCaps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
@@ -97,7 +103,7 @@ public class AdminCategoryActivity extends AppCompatActivity {
 
 
 
-        walletsBagPurses.setOnClickListener(new View.OnClickListener() {
+        walletsBagsPurses.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
@@ -120,7 +126,7 @@ public class AdminCategoryActivity extends AppCompatActivity {
 
 
 
-        headPhones.setOnClickListener(new View.OnClickListener() {
+        headPhonesHandFree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
@@ -131,7 +137,7 @@ public class AdminCategoryActivity extends AppCompatActivity {
         });
 
 
-        laptops.setOnClickListener(new View.OnClickListener() {
+        Laptops.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
