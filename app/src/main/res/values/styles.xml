@@ -27,7 +27,8 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="AppTheme.Toolbar" parent="ThemeOverlay.AppCompat.ActionBar" />
-    <style name="loginButton" >
+
+    <style name="loginButton">
         <item name="android:background">@drawable/login_button_bk</item>
         <item name="android:textColor">@color/whiteTextColor</item>
         <item name="android:textStyle">bold</item>
