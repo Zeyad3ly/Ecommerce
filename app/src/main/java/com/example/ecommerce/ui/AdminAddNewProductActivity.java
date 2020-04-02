@@ -1,8 +1,7 @@
-package com.example.ecommerce;
+package com.example.ecommerce.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -15,6 +14,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.ecommerce.R;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -30,7 +30,6 @@ import com.google.firebase.storage.UploadTask;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
-import java.util.Objects;
 
 public class AdminAddNewProductActivity extends AppCompatActivity {
     private String CategoryName, description, price, pName, saveCurrentDate, saveCurrentTime;

@@ -10,14 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".HomeActivity"
+            android:name=".ui.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".AdminCategoryActivity" />
-        <activity android:name=".AdminAddNewProductActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.AdminCategoryActivity" />
+        <activity android:name=".ui.AdminAddNewProductActivity" />
+        <activity android:name=".ui.RegisterActivity" />
+        <activity android:name=".ui.LoginActivity" />
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
