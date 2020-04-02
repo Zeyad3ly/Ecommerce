@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.SettingsActivity"></activity>
         <activity
             android:name=".ui.HomeActivity"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ui.AdminCategoryActivity" />
         <activity android:name=".ui.AdminAddNewProductActivity" />
         <activity android:name=".ui.RegisterActivity" />

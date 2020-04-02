@@ -101,8 +101,7 @@ public class HomeActivity extends AppCompatActivity
 
 
     @Override
-    protected void onStart()
-    {
+    protected void onStart() {
         super.onStart();
 
         FirebaseRecyclerOptions<Products> options =
@@ -114,8 +113,7 @@ public class HomeActivity extends AppCompatActivity
         FirebaseRecyclerAdapter<Products, ProductViewHolder> adapter =
                 new FirebaseRecyclerAdapter<Products, ProductViewHolder>(options) {
                     @Override
-                    protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull Products model)
-                    {
+                    protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull Products model) {
                         holder.txtProductName.setText(model.getPname());
                         holder.txtProductDescription.setText(model.getDescription());
                         holder.txtProductPrice.setText("Price = " + model.getPrice() + "$");
@@ -124,8 +122,7 @@ public class HomeActivity extends AppCompatActivity
 
                     @NonNull
                     @Override
-                    public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
-                    {
+                    public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_item_layout, parent, false);
                         ProductViewHolder holder = new ProductViewHolder(view);
                         return holder;
@@ -146,7 +143,6 @@ public class HomeActivity extends AppCompatActivity
     }
 
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -155,10 +151,8 @@ public class HomeActivity extends AppCompatActivity
     }
 
 
-
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
+    public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
 //        if (id == R.id.action_settings)
@@ -170,33 +164,22 @@ public class HomeActivity extends AppCompatActivity
     }
 
 
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item)
-    {
+    public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_cart)
-        {
+        if (id == R.id.nav_cart) {
 
-        }
-        else if (id == R.id.nav_orders)
-        {
+        } else if (id == R.id.nav_orders) {
 
-        }
-        else if (id == R.id.nav_categories)
-        {
+        } else if (id == R.id.nav_categories) {
 
-        }
-        else if (id == R.id.nav_settings)
-        {
-//            Intent intent = new Intent(HomeActivity.this, SettinsActivity.class);
-//            startActivity(intent);
-        }
-        else if (id == R.id.nav_logout)
-        {
+        } else if (id == R.id.nav_settings) {
+            Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_logout) {
             Paper.book().destroy();
 
             Intent intent = new Intent(HomeActivity.this, MainActivity.class);

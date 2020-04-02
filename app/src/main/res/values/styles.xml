@@ -14,6 +14,9 @@
         <item name="windowActionBarOverlay">true</item>
         <item name="android:statusBarColor">@android:color/darker_gray</item>
     </style>
+    <style name="DrawerIcon" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@color/colorAccent</item>
+    </style>
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
