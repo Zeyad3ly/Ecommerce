@@ -14,7 +14,7 @@
             android:id="@+id/toolbar_settings"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="@drawable/bakgrnd"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -72,6 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:hint="Phone Number"
+            android:inputType="number"
             android:padding="10dp"
             app:layout_constraintStart_toStartOf="@+id/profile_image_change_btn"
             app:layout_constraintTop_toBottomOf="@+id/profile_image_change_btn" />
