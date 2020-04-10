@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.CartActivity"></activity>
+        <activity android:name=".ui.ConfirmFinalOrderActivity"></activity>
+        <activity android:name=".ui.CartActivity" />
         <activity android:name=".ui.ProductDetailsActivity" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
